@@ -23,12 +23,15 @@
 	  <div class="blurred" style="background:url(img/photo-blurred.jpg) no-repeat center center; background-size: cover;"></div>
 	  </div>
 	  
-	  <div class="bit-button bit-button-visual" style="margin-top: 170px;">
-		  <div class="label-text start-text ">Начать тест</div>
-	  </div>
+	  
+		  <div class="bit-button bit-button-visual" style="margin-top: 170px;">
+			 <div class="label-text start-text">Начать тест</div>
+		  </div>
+	  
+	  <div class="ruby-big"></div>
 	  
 	  
-	  <div class="content large-6 large-centered column">
+	  <div id="content-link" class="content large-6 large-centered column">
 		  <h1 class="start-margin" style="margin-top: 270px;">Тестовое задание</h1>
 		  <h2 class="block-margin">Требования</h2>
 		  <p class="article-margin">Тестовое задание заключается в том, что нужно запрограммировать решение задачи на ruby. Результат должен быть выложен либо в отдельном Github репозитории, либо в Gist. </p>
@@ -65,42 +68,8 @@
 		  -->		
 	  </div>
 	  
-	  
-	  <script>
-	  function fader() {
-		  var r = $('.blurred'), // берем все элементы, имеющие класс .blurred
-		  wh = $(window).height(), // тут берем высоту окна
-		  dt = $(document).scrollTop(), // отступ от верха, наверно для каждого браузера
-		  step = $('.image-wrap').css('height'), // разбиваем img на линии(шаги)
-		  elView, opacity, scrolled,
-		  n = 10;
-		  
-
-		  // Loop elements with class "blurred"
-			  r.each(function() {
-				  scrolled = $(document).scrollTop();
-				  temp = scrolled / n;
-				  //alert(temp);
-				  if (temp < 100) {
-					  opacity = 0.1 * temp;
-				  }
-				  $(this).css('opacity', opacity);
-			  }
-		  );
-	  }
-	  
-	  $(document).bind('scroll', fader);
-	  
-	  (function() {
-	    $(window).scroll(function() {
-	      var oVal;
-	      oVal = $(window).scrollTop() / 240;
-	      return $(".blur").css("opacity", oVal);
-	    });
-
-	  }).call(this);
-	  
-	  </script>
+	  <script src="js/transition.js"></script>
+	  <script src="js/blur.js"></script>
 	  
 	  
   </body>
