@@ -10,15 +10,19 @@
 	<link rel="stylesheet" href="css/fonts-styles.css" />
 	<link rel="stylesheet" href="css/main.css" />
 	<link rel="stylesheet" href="css/blur.css" />
-    <script src="js/vendor/modernizr.js"></script>
+	<script src="js/vendor/jquery.js"></script>
+	
+	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+	
   </head>
   <body>
 	  <header> </header>
 	  
 	  <div class="image-wrap">
-	  	<div class="regular" style="background:url(img/photo.jpg) no-repeat center center; background-size: cover;"></div>
-	  	<div class="blurred" style="background:url(img/photo-blurred.jpg) no-repeat center center; background-size: cover;"></div>
+	  <div class="regular" style="background:url(img/photo.jpg) no-repeat center center; background-size: cover;"></div>
+	  <div class="blurred" style="background:url(img/photo-blurred.jpg) no-repeat center center; background-size: cover;"></div>
 	  </div>
+	  
 	  <div class="bit-button bit-button-visual" style="margin-top: 170px;">
 		  <div class="label-text start-text ">Начать тест</div>
 	  </div>
@@ -63,27 +67,30 @@
 	  
 	  
 	  <script>
-
 	  function fader() {
-	      var r = $('.blurred'),
-	          wh = $(window).height(),
-	          dt = $(document).scrollTop(),
-	          elView, opacity;
-    
-	      // Loop elements with class "blurred"
-	      r.each(function() {
-	          elView  = wh - ($(this).offset().top - dt + 300);
-	          if (elView > 0) { // Top of DIV above bottom of window.
-	              opacity = 1 / (wh + $(this).height()) * elView * 3
-	              if (opacity < 1) // Bottom of DIV below top of window.
-	                  $(this).css('opacity', opacity);
-	  		}
-		
-	      });
-	  }
-	  $(document).bind('scroll', fader);
+		  var r = $('.blurred'), // берем все элементы, имеющие класс .blurred
+		  wh = $(window).height(), // тут берем высоту окна
+		  dt = $(document).scrollTop(), // отступ от верха, наверно для каждого браузера
+		  step = $('.image-wrap').css('height'), // разбиваем img на линии(шаги)
+		  elView, opacity, scrolled,
+		  n = 10;
+		  
 
-	  /*
+		  // Loop elements with class "blurred"
+			  r.each(function() {
+				  scrolled = $(document).scrollTop();
+				  temp = scrolled / n;
+				  //alert(temp);
+				  if (temp < 100) {
+					  opacity = 0.1 * temp;
+				  }
+				  $(this).css('opacity', opacity);
+			  }
+		  );
+	  }
+	  
+	  $(document).bind('scroll', fader);
+	  
 	  (function() {
 	    $(window).scroll(function() {
 	      var oVal;
@@ -92,7 +99,7 @@
 	    });
 
 	  }).call(this);
-	  */
+	  
 	  </script>
 	  
 	  
