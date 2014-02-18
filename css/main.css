@@ -1,0 +1,64 @@
+.start-margin {
+	margin-top: 80px;
+}
+
+.block-margin {
+	margin-top: 60px;
+}
+
+.article-margin {
+	margin-top: 20px;
+}
+
+form {
+	position: relative;
+	left: -14px;
+	padding: 0;
+	margin: 0;
+}
+
+.input-field {
+	border-radius: 10px;
+	border-radius: 10px;
+	background: #FAFAFA;
+	border: 1px solid #D4D4D4;
+}
+
+.bit-button {
+    margin: 50px auto;
+    width: 200px;
+    height: 42px;
+}
+
+.bit-button-visual {
+    border-radius: 40px;
+    background: #DE6B75;
+    border: 2px solid #B24057;
+}
+
+.bit-button:hover {
+    -webkit-animation: scale 0.8s ease-in-out;
+}
+
+.sent-text {
+	top: -85px;
+	left: 41px;
+}
+
+.start-text {
+	top: 5px;
+	left: 30px;
+}
+
+
+@-webkit-keyframes scale {
+    10% {
+        -webkit-transform: scale(1);
+    }
+    50% {
+        -webkit-transform: scale(1.1);
+    }
+    100% {
+        -webkit-transform: scale(1);
+    }
+}
