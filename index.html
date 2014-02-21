@@ -18,18 +18,28 @@
   <body>
 	  <header> </header>
 	  
-	  <div class="image-wrap">
-	  <div class="regular" style="background:url(img/photo.jpg) no-repeat center center; background-size: cover;"></div>
-	  <div class="blurred" style="background:url(img/photo-blurred.jpg) no-repeat center center; background-size: cover;"></div>
+	  <div id="displayed-page" style="background-color: red;">
+		  
+		  
+		  <div class="image-wrap">
+		  <div class="regular regular-image"></div>
+		  <div class="blurred blurred-image"></div>
+		  </div>
+	  
+		  <div class="bit-button bit-button-visual" style="margin-top: 170px;">
+			 <div class="label-text start-text">Начать тест</div>
+		  </div>
+	  
+		   <div class="ruby-big"></div>
+		   
+		   
 	  </div>
 	  
-	  <div class="bit-button bit-button-visual" style="margin-top: 170px;">
-		  <div class="label-text start-text ">Начать тест</div>
-	  </div>
 	  
 	  
-	  <div class="content large-6 large-centered column">
-		  <h1 class="start-margin" style="margin-top: 270px;">Тестовое задание</h1>
+	  <div id="content-page" class="content large-6 large-centered column" style="background-color: blue;">
+		  <div style="width: 100%; height: 150px; background-color: white;"> </div>
+		  <h1 id="welcome-h1" class="none-margin">Тестовое задание</h1>
 		  <h2 class="block-margin">Требования</h2>
 		  <p class="article-margin">Тестовое задание заключается в том, что нужно запрограммировать решение задачи на ruby. Результат должен быть выложен либо в отдельном Github репозитории, либо в Gist. </p>
 		  <h2 class="block-margin">Задание</h2>
@@ -66,41 +76,7 @@
 	  </div>
 	  
 	  
-	  <script>
-	  function fader() {
-		  var r = $('.blurred'), // берем все элементы, имеющие класс .blurred
-		  wh = $(window).height(), // тут берем высоту окна
-		  dt = $(document).scrollTop(), // отступ от верха, наверно для каждого браузера
-		  step = $('.image-wrap').css('height'), // разбиваем img на линии(шаги)
-		  elView, opacity, scrolled,
-		  n = 10;
-		  
-
-		  // Loop elements with class "blurred"
-			  r.each(function() {
-				  scrolled = $(document).scrollTop();
-				  temp = scrolled / n;
-				  //alert(temp);
-				  if (temp < 100) {
-					  opacity = 0.1 * temp;
-				  }
-				  $(this).css('opacity', opacity);
-			  }
-		  );
-	  }
-	  
-	  $(document).bind('scroll', fader);
-	  
-	  (function() {
-	    $(window).scroll(function() {
-	      var oVal;
-	      oVal = $(window).scrollTop() / 240;
-	      return $(".blur").css("opacity", oVal);
-	    });
-
-	  }).call(this);
-	  
-	  </script>
+	  <script src="js/blur.js"></script>
 	  
 	  
   </body>
