@@ -1,4 +1,6 @@
 $('.bit-button').click(function() {
   $('html').css('overflow', 'visible');
-  $('html, body').animate({scrollTop: $("#content-link").offset().top - 100}, 2000);
+  $('html, body').animate({scrollTop: $("#content-page").offset().top}, 2000, function() {
+		$('#displayed-page').css('display', 'none');
+  });
 });

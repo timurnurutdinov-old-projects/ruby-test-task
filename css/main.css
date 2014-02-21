@@ -2,6 +2,10 @@ html {
 	overflow: hidden;
 }
 
+.none-margin {
+	margin-top: 0px;
+}
+
 .start-margin {
 	margin-top: 80px;
 }
@@ -66,6 +70,16 @@ form {
 
 .ruby-big:hover {
     -webkit-animation: move 0.6s ease-in-out;
+}
+
+.regular-image {
+	background: url('../img/photo.jpg') no-repeat center center; 
+	background-size: cover;
+}
+
+.blurred-image {
+	background:url('../img/photo-blurred.jpg') no-repeat center center;
+	background-size: cover;
 }
 
 
